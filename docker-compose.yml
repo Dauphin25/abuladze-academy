@@ -1,0 +1,47 @@
+# Full stack: PostgreSQL + FastAPI backend + nginx-served frontend.
+# Start with:  docker compose up --build
+# Then open:   http://localhost:8080   (admin at /admin, default admin/admin123)
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: abuladze
+      POSTGRES_PASSWORD: abuladze
+      POSTGRES_DB: abuladze
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U abuladze"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://abuladze:abuladze@db:5432/abuladze
+      # CHANGE THESE for production:
+      SECRET_KEY: change-me-to-a-long-random-string
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: admin123
+      # Same-origin behind nginx, so CORS is only a safety net:
+      CORS_ORIGINS: http://localhost:8080
+    depends_on:
+      db:
+        condition: service_healthy
+    expose:
+      - "8000"
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  pgdata:

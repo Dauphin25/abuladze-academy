@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-slate-800 antialiased;
+}
+
+/* Brand scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-slate-300;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400;
+}
+
+/* Scroll-reveal: hidden until .is-visible is added by the Reveal component */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-float,
+  .animate-marquee,
+  .animate-gradient-x,
+  .animate-spin-slow {
+    animation: none !important;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-600 text-white shadow-sm shadow-brand-600/30 transition-all hover:bg-brand-700 hover:shadow-md hover:shadow-brand-600/40 hover:-translate-y-0.5 focus:ring-brand-500;
+  }
+
+  .btn-outline {
+    @apply btn border border-slate-300 bg-white text-slate-700 hover:border-brand-400 hover:text-brand-700 focus:ring-brand-500;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-800 shadow-sm outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-200;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-slate-700;
+  }
+
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
+  }
+
+  /* Gradient text using the Python palette */
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-600 via-python-blue to-python-light bg-clip-text text-transparent;
+  }
+
+  /* Frosted-glass surface */
+  .glass {
+    @apply border border-white/40 bg-white/70 backdrop-blur-md;
+  }
+
+  /* Card that lifts and gains a brand ring on hover */
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-slate-200/70 hover:ring-1 hover:ring-brand-200;
+  }
+
+  /* Animated gradient pill border (Python blue → yellow) */
+  .pill-python {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-python-blue/10 to-python-yellow/20 px-3 py-1 text-xs font-semibold text-python-dark ring-1 ring-python-blue/20;
+  }
+}

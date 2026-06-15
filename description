@@ -1,0 +1,684 @@
+# Academy Management Platform
+
+## Overview
+
+Build a modern, professional, fast, and responsive academy management platform for a lecturer/professor.
+
+The platform should combine:
+
+* Public academy website
+* Student registration system
+* Content Management System (CMS)
+* Student management dashboard
+* Communication and notification tools
+
+The website should feel similar to a modern university website while remaining clean, elegant, and highly functional.
+
+---
+
+# Main Goals
+
+1. Present academy information professionally.
+2. Allow students to register online.
+3. Allow the lecturer to manage content without developers.
+4. Support multiple educational programs.
+5. Provide powerful student administration tools.
+6. Deliver a modern user experience.
+7. Be mobile-friendly and fast.
+
+---
+
+# User Roles
+
+## Guest
+
+Can:
+
+* View homepage
+* View courses
+* View professor profile
+* View announcements
+* Register for programs
+
+---
+
+## Student
+
+Can:
+
+* Create account
+* Login
+* Edit profile
+* Upload required documents
+* View application status
+* Receive notifications
+
+---
+
+## Administrator (Professor)
+
+Full access to:
+
+* Content management
+* Student management
+* Course management
+* Registration management
+* Website settings
+* Analytics
+
+---
+
+# Public Website
+
+## Homepage
+
+### Hero Section
+
+Contains:
+
+* Academy logo
+* Academy name
+* Professor photo
+* Academy description
+* Registration CTA button
+* Courses CTA button
+
+### Important Dates Section
+
+Admin managed.
+
+Supports:
+
+* Registration deadlines
+* Course start dates
+* Exam dates
+* Events
+* Open days
+
+Features:
+
+* Timeline view
+* Calendar view
+* Countdown timers
+
+---
+
+### Programs Overview
+
+Display:
+
+#### School Student Program
+
+* Description
+* Duration
+* Requirements
+* Benefits
+
+#### University Student Program
+
+* Description
+* Duration
+* Requirements
+* Benefits
+
+Admin can:
+
+* Hide/show
+* Reorder
+* Edit
+
+---
+
+### Statistics
+
+Animated counters:
+
+* Active Students
+* Graduates
+* Years of Experience
+* Success Rate
+
+---
+
+### Testimonials
+
+CMS managed.
+
+Admin can:
+
+* Add
+* Remove
+* Approve
+* Reorder
+
+---
+
+### News & Announcements
+
+CMS managed.
+
+Supports:
+
+* Categories
+* Tags
+* Pinned posts
+* Scheduled publishing
+
+---
+
+# Professor Page
+
+This page must be fully CMS-driven.
+
+Every section can be:
+
+* Created
+* Edited
+* Hidden
+* Published
+* Reordered
+
+without touching code.
+
+---
+
+## Sections
+
+### Biography
+
+Rich text editor.
+
+### Education
+
+Timeline component.
+
+### Academic Experience
+
+Timeline component.
+
+### Publications
+
+Supports:
+
+* PDF uploads
+* External links
+
+### Research Areas
+
+Tag-based system.
+
+### Awards & Achievements
+
+Gallery format.
+
+### Certifications
+
+Document uploads.
+
+### Media Gallery
+
+Supports:
+
+* Photos
+* Videos
+* Interviews
+
+### Social Links
+
+Supports:
+
+* LinkedIn
+* Facebook
+* YouTube
+* Website
+
+---
+
+# Courses System
+
+## Course Types
+
+### School Students
+
+### University Students
+
+Administrator can create unlimited additional programs.
+
+---
+
+## Course Features
+
+Each course contains:
+
+* Title
+* Description
+* Cover image
+* Duration
+* Requirements
+* Curriculum
+* Schedule
+* Price
+* FAQ
+* Status
+
+Statuses:
+
+* Draft
+* Published
+* Archived
+
+---
+
+# Registration System
+
+## Dynamic Registration Forms
+
+Administrator can create forms without coding.
+
+Supported field types:
+
+* Text
+* Email
+* Phone
+* Number
+* Date
+* Select
+* Radio
+* Checkbox
+* Text Area
+* File Upload
+
+---
+
+## Conditional Logic
+
+Example:
+
+If applicant selects "University Student"
+
+Show:
+
+* University
+* Faculty
+* Year
+
+If applicant selects "School Student"
+
+Show:
+
+* School
+* Grade
+
+---
+
+# Application Workflow
+
+## Statuses
+
+* New
+* Under Review
+* Interview Scheduled
+* Accepted
+* Rejected
+* Waitlisted
+
+---
+
+## Review System
+
+Administrator can:
+
+* Add internal notes
+* Score applicants
+* Change status
+* Track history
+
+---
+
+# Student Dashboard
+
+Students can view:
+
+* Profile
+* Application status
+* Submitted documents
+* Notifications
+* Course information
+
+---
+
+# Admin Dashboard
+
+## Overview
+
+Widgets:
+
+* Total Applications
+* New Applications
+* Pending Reviews
+* Accepted Students
+* Rejected Students
+* Active Courses
+
+---
+
+## Analytics
+
+Charts for:
+
+* Daily registrations
+* Monthly registrations
+* Course popularity
+* Conversion rates
+
+---
+
+# Student Management
+
+## Table Features
+
+Columns:
+
+* Name
+* Email
+* Phone
+* Program
+* Registration Date
+* Status
+
+---
+
+## Search
+
+Search by:
+
+* Name
+* Email
+* Phone
+* School
+* University
+
+---
+
+## Filters
+
+Filter by:
+
+* Status
+* Program
+* Registration Date
+* School
+* University
+
+---
+
+## Bulk Actions
+
+* Accept
+* Reject
+* Email
+* Export
+
+---
+
+## Export Formats
+
+* CSV
+* Excel
+* PDF
+
+---
+
+# CMS Features
+
+## Page Builder
+
+Admin can:
+
+* Add sections
+* Remove sections
+* Reorder sections
+* Hide sections
+* Schedule publication
+
+---
+
+## Media Library
+
+Supports:
+
+* Images
+* PDFs
+* Videos
+
+Features:
+
+* Search
+* Categories
+* Folder structure
+
+---
+
+# Notifications
+
+## Email Notifications
+
+When a student registers:
+
+Send email to lecturer containing:
+
+* Name
+* Email
+* Phone
+* Program
+* Registration date
+
+---
+
+## Student Emails
+
+Automatic emails:
+
+* Registration confirmation
+* Status change
+* Acceptance
+* Rejection
+
+---
+
+# Document Management
+
+Students can upload:
+
+* CV
+* Certificates
+* Motivation letter
+* Identification document
+
+Administrator can:
+
+* View
+* Download
+* Approve
+* Reject
+
+---
+
+# Calendar System
+
+Display:
+
+* Registration periods
+* Course schedules
+* Events
+* Exams
+
+Supports:
+
+* Monthly view
+* Agenda view2
+
+---
+
+# Advanced Features
+
+## QR Student Cards
+
+Generate unique QR code for accepted students.
+
+---
+
+## Interview Scheduling
+
+Admin can:
+
+* Create interview slots
+* Assign applicants
+* Send invitations
+
+---
+
+## Announcement Center
+
+Send announcements to:
+
+* All students
+* School students
+* University students
+
+---
+
+## Audit Log
+
+Track:
+
+* Content changes
+* Student status changes
+* Admin actions
+
+---
+
+# Design Requirements
+
+## Style
+
+* Modern
+* Academic
+* Professional
+* Clean
+* Premium
+* Fast
+
+---
+
+## UI Features
+
+* Smooth animations
+* Skeleton loading
+* Toast notifications
+* Responsive design
+* Mobile optimization
+* Dark mode
+* Accessibility support
+
+---
+
+# Technical Stack
+
+## Frontend
+
+* Next.js 15
+* TypeScript
+* Tailwind CSS
+* Shadcn/UI
+* Framer Motion
+
+---
+
+## Backend
+
+* Next.js API Routes
+
+or
+
+* NestJS
+
+---
+
+## Database
+
+* PostgreSQL
+
+---
+
+## ORM
+
+* Prisma
+
+---
+
+## Authentication
+
+* Auth.js / NextAuth
+
+---
+
+## Storage
+
+* S3 Compatible Storage
+
+---
+
+## Email Service
+
+* Resend
+
+---
+
+# Security
+
+* JWT Sessions
+* Password Hashing
+* Rate Limiting
+* CSRF Protection
+* Secure File Upload Validation
+* Role-Based Access Control
+
+---
+
+# SEO
+
+* Sitemap
+* Open Graph
+* Metadata Management
+* Structured Data
+* SEO Friendly URLs
+
+---
+
+# Future Expansion
+
+The architecture should support future additions:
+
+* Online courses
+* Video lessons
+* Payment system
+* Certificates
+* Mobile application
+* Telegram integration
+* SMS notifications
+
+---
+
+# Success Criteria
+
+The finished platform should:
+
+* Look like a professional university website
+* Be manageable by non-technical users
+* Handle student registrations efficiently
+* Provide advanced administration tools
+* Be responsive on all devices
+* Load quickly
+* Be secure
+* Be production-ready
