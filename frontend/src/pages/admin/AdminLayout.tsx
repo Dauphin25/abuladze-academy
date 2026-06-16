@@ -9,6 +9,7 @@ const nav = [
   ["messages", "შეტყობინებები", "mail"],
   ["content", "საიტის კონტენტი", "edit"],
   ["email", "ელ. ფოსტა", "send"],
+  ["docs", "დოკუმენტაცია", "file-text"],
 ];
 
 export default function AdminLayout() {

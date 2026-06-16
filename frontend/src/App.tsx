@@ -16,6 +16,7 @@ import StudentsAdmin from "./pages/admin/StudentsAdmin";
 import MessagesAdmin from "./pages/admin/MessagesAdmin";
 import ContentAdmin from "./pages/admin/ContentAdmin";
 import EmailAdmin from "./pages/admin/EmailAdmin";
+import DocsPage from "./pages/admin/DocsPage";
 import type { ReactNode } from "react";
 
 function RequireAuth({ children }: { children: ReactNode }) {
@@ -57,6 +58,7 @@ export default function App() {
         <Route path="messages" element={<MessagesAdmin />} />
         <Route path="content" element={<ContentAdmin />} />
         <Route path="email" element={<EmailAdmin />} />
+        <Route path="docs" element={<DocsPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
