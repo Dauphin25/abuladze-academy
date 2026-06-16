@@ -14,8 +14,12 @@ RUN npm run build
 # --- Runtime stage ---
 FROM nginx:alpine
 
-# SPA routing + /api proxy to the backend service.
+# SPA routing + optional /api proxy (see docker-entrypoint.sh).
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 80
+
+CMD ["/docker-entrypoint.sh"]
