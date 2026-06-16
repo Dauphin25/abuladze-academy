@@ -15,6 +15,10 @@ import type {
 
 const TOKEN_KEY = "abuladze_token";
 
+// In dev/docker: empty string → Vite proxy or nginx handles /api/...
+// On Railway: set VITE_API_URL=https://your-backend.up.railway.app at build time
+const BASE = (import.meta.env.VITE_API_URL as string) ?? "";
+
 export function getToken(): string | null {
   return localStorage.getItem(TOKEN_KEY);
 }
@@ -50,7 +54,7 @@ async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
     headers.set("Content-Type", "application/json");
   }
 
-  const res = await fetch(`/api${path}`, { ...options, headers });
+  const res = await fetch(`${BASE}/api${path}`, { ...options, headers });
 
   if (res.status === 401) {
     clearToken();
