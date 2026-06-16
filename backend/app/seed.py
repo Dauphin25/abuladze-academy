@@ -284,13 +284,17 @@ def seed() -> None:
     Base.metadata.create_all(bind=engine)
     db: Session = SessionLocal()
     try:
-        # Default admin
-        if db.scalar(select(Admin).where(Admin.username == settings.admin_username)) is None:
+        # Default admin — create or update credentials from env vars
+        existing = db.scalar(select(Admin).where(Admin.username == settings.admin_username))
+        if existing is None:
             db.add(Admin(
                 username=settings.admin_username,
                 hashed_password=hash_password(settings.admin_password),
             ))
             print(f"[seed] Created admin '{settings.admin_username}'")
+        else:
+            existing.hashed_password = hash_password(settings.admin_password)
+            print(f"[seed] Updated admin '{settings.admin_username}'")
 
         # Content blocks (both locales)
         for key, values in CONTENT.items():
