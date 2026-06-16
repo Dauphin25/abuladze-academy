@@ -7,6 +7,10 @@ WORKDIR /app
 COPY package.json package-lock.json* ./
 RUN npm ci
 
+# Declare build arg so Railway passes VITE_API_URL into the Docker build context.
+ARG VITE_API_URL
+ENV VITE_API_URL=$VITE_API_URL
+
 # Build the production bundle.
 COPY . .
 RUN npm run build
